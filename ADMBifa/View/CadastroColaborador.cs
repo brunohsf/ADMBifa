@@ -41,6 +41,10 @@ namespace ADMBifa.View
         private void Carregar()
         {
             var colaborador = _repository.CarregarColaborador();
+            LimparCampos();
+
+            if (colaborador is null)
+                return;
 
             txtCodigoColaborador.Text = colaborador.CodigoColaborador.ToString();
             txtNome.Text = colaborador.Nome;
@@ -51,7 +55,7 @@ namespace ADMBifa.View
 
         }
 
-        private void btnNovo_Click(object sender, EventArgs e)
+        private void LimparCampos()
         {
             txtCodigoColaborador.Text = "";
             txtNome.Text = "";
@@ -59,6 +63,11 @@ namespace ADMBifa.View
             cmbNivel.SelectedIndex = 0;
             txtLimite.Value = 0;
             ckAtivo.Checked = true;
+        }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -71,6 +80,11 @@ namespace ADMBifa.View
 
             var colaborador = new Colaborador(int.Parse(txtCodigoColaborador.Text), txtNome.Text, txtDataContratacao.Value, (int)txtLimite.Value, (ENivel)cmbNivel.SelectedIndex, ckAtivo.Checked);
 
+            if (MessageBox.Show("Deseja realmente mandar esse colaborador de Clibas?", "Confirma", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                _repository.Delete(colaborador);
+                Carregar();
+            }
         }
     }
 }

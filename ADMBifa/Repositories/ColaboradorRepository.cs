@@ -16,7 +16,7 @@ namespace ADMBifa.Repositories
                  CodigoNivel,
                  Ativo FROM Colaborador WHERE Ativo = 1";
 
-            return _connection.QueryFirst<Colaborador>(sql);
+            return _connection.QueryFirstOrDefault<Colaborador>(sql);
 
         }
 
