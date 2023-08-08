@@ -1,0 +1,16 @@
+C:\Users\BrunoHenrique\source\repos\ADMBifa\ADMBifa\bin\Debug\ADMBifa.exe.config
+C:\Users\BrunoHenrique\source\repos\ADMBifa\ADMBifa\bin\Debug\ADMBifa.exe
+C:\Users\BrunoHenrique\source\repos\ADMBifa\ADMBifa\bin\Debug\ADMBifa.pdb
+C:\Users\BrunoHenrique\source\repos\ADMBifa\ADMBifa\bin\Debug\Dapper.Contrib.dll
+C:\Users\BrunoHenrique\source\repos\ADMBifa\ADMBifa\bin\Debug\Dapper.dll
+C:\Users\BrunoHenrique\source\repos\ADMBifa\ADMBifa\bin\Debug\Dapper.xml
+C:\Users\BrunoHenrique\source\repos\ADMBifa\ADMBifa\bin\Debug\Dapper.Contrib.xml
+C:\Users\BrunoHenrique\source\repos\ADMBifa\ADMBifa\obj\Debug\ADMBifa.csproj.AssemblyReference.cache
+C:\Users\BrunoHenrique\source\repos\ADMBifa\ADMBifa\obj\Debug\ADMBifa.FormPrincipal.resources
+C:\Users\BrunoHenrique\source\repos\ADMBifa\ADMBifa\obj\Debug\ADMBifa.Properties.Resources.resources
+C:\Users\BrunoHenrique\source\repos\ADMBifa\ADMBifa\obj\Debug\ADMBifa.csproj.GenerateResource.cache
+C:\Users\BrunoHenrique\source\repos\ADMBifa\ADMBifa\obj\Debug\ADMBifa.csproj.CoreCompileInputs.cache
+C:\Users\BrunoHenrique\source\repos\ADMBifa\ADMBifa\obj\Debug\ADMBifa.csproj.CopyComplete
+C:\Users\BrunoHenrique\source\repos\ADMBifa\ADMBifa\obj\Debug\ADMBifa.exe
+C:\Users\BrunoHenrique\source\repos\ADMBifa\ADMBifa\obj\Debug\ADMBifa.pdb
+C:\Users\BrunoHenrique\source\repos\ADMBifa\ADMBifa\obj\Debug\ADMBifa.View.CadastroColaborador.resources
