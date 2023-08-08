@@ -40,8 +40,8 @@ namespace ADMBifa.View
 
         private void Carregar()
         {
+
             var colaborador = _repository.CarregarColaborador();
-            LimparCampos();
 
             if (colaborador is null)
                 return;
@@ -83,8 +83,15 @@ namespace ADMBifa.View
             if (MessageBox.Show("Deseja realmente mandar esse colaborador de Clibas?", "Confirma", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 _repository.Delete(colaborador);
+                LimparCampos();
                 Carregar();
             }
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            var listagemColaboradores = new ListagemColaboradores();
+            listagemColaboradores.ShowDialog();
         }
     }
 }

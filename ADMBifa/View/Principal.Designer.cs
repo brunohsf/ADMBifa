@@ -38,7 +38,7 @@ namespace ADMBifa
             this.btnCadastarColaborador.Name = "btnCadastarColaborador";
             this.btnCadastarColaborador.Size = new System.Drawing.Size(144, 34);
             this.btnCadastarColaborador.TabIndex = 0;
-            this.btnCadastarColaborador.Text = "Cadastrar Colaborador";
+            this.btnCadastarColaborador.Text = "Colaboradores";
             this.btnCadastarColaborador.UseVisualStyleBackColor = true;
             this.btnCadastarColaborador.Click += new System.EventHandler(this.btnCadastarColaborador_Click);
             // 

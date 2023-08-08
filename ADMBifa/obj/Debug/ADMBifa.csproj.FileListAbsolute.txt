@@ -14,3 +14,4 @@ C:\Users\BrunoHenrique\source\repos\ADMBifa\ADMBifa\obj\Debug\ADMBifa.csproj.Cop
 C:\Users\BrunoHenrique\source\repos\ADMBifa\ADMBifa\obj\Debug\ADMBifa.exe
 C:\Users\BrunoHenrique\source\repos\ADMBifa\ADMBifa\obj\Debug\ADMBifa.pdb
 C:\Users\BrunoHenrique\source\repos\ADMBifa\ADMBifa\obj\Debug\ADMBifa.View.CadastroColaborador.resources
+C:\Users\BrunoHenrique\source\repos\ADMBifa\ADMBifa\obj\Debug\ADMBifa.View.ListagemColaboradores.resources
