@@ -1,20 +1,24 @@
 ﻿using ADMBifa.Models;
-using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Dapper;
 
 namespace ADMBifa.Repositories
 {
     public class ColaboradorRepository : Repository<Colaborador>
     {
-        private readonly SqlConnection _connection;
 
-        public ColaboradorRepository(SqlConnection connection)
-            => _connection = connection;
 
+        public Colaborador CarregarColaborador()
+        {
+            var sql = @"SELECT TOP (1) CodigoColaborador,
+                 Nome,
+                 DataContratacao,
+                 LimiteBifas,
+                 CodigoNivel,
+                 Ativo FROM Colaborador WHERE Ativo = 1";
+
+            return _connection.QueryFirst<Colaborador>(sql);
+
+        }
 
     }
 }

@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using Dapper.Contrib.Extensions;
+using System.Collections.Generic;
 using System.Data.SqlClient;
-using Dapper.Contrib.Extensions;
 
 namespace ADMBifa.Repositories
 {
     public class Repository<T> where T : class
     {
-        private readonly SqlConnection _connection;
+        protected readonly SqlConnection _connection;
 
         public Repository()
             => _connection = new SqlConnection(Config.ConnectionString);

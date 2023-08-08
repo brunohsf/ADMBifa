@@ -49,6 +49,7 @@ namespace ADMBifa
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnCadastarColaborador);
             this.Name = "FormPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ADMBifa";
             this.ResumeLayout(false);
 

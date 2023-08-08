@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 namespace ADMBifa.Enums
 {
@@ -15,7 +10,7 @@ namespace ADMBifa.Enums
         Estagiario = 1,
         [Description("Junior")]
         Junior = 2,
-        [Description("Pelno")]
+        [Description("Pleno")]
         Pleno = 3,
         [Description("Senior")]
         Senior = 4

@@ -17,16 +17,18 @@ namespace ADMBifa.Models
             Ativo = ativo;
         }
 
-        [Write(false)]
+        public Colaborador()
+        {
+
+        }
+
+        [Key]
         public int CodigoColaborador { get; set; }
         public string Nome { get; set; }
         public DateTime DataContratacao { get; set; }
         public int LimiteBifas { get; set; }
         public ENivel CodigoNivel { get; set; }
         public bool Ativo { get; set; }
-
-
-
 
     }
 }

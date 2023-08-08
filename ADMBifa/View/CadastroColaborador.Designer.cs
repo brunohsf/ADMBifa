@@ -76,6 +76,7 @@ namespace ADMBifa.View
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnCancelar
             // 
@@ -104,6 +105,7 @@ namespace ADMBifa.View
             this.btnNovo.TabIndex = 5;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // label1
             // 
@@ -178,7 +180,7 @@ namespace ADMBifa.View
             // 
             this.cmbNivel.FormattingEnabled = true;
             this.cmbNivel.Items.AddRange(new object[] {
-            "Não informado",
+            "",
             "Estagiário",
             "Júnior",
             "Pleno",
@@ -230,6 +232,7 @@ namespace ADMBifa.View
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.btnGravar);
             this.Name = "CadastroColaborador";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CadastroColaborador";
             ((System.ComponentModel.ISupportInitialize)(this.txtLimite)).EndInit();
             this.ResumeLayout(false);
