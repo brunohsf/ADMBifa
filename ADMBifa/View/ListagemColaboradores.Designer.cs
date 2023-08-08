@@ -66,6 +66,7 @@ namespace ADMBifa.View
             this.dgvColaboradores.ReadOnly = true;
             this.dgvColaboradores.Size = new System.Drawing.Size(768, 385);
             this.dgvColaboradores.TabIndex = 2;
+            this.dgvColaboradores.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvColaboradores_CellMouseDoubleClick);
             // 
             // ListagemColaboradores
             // 

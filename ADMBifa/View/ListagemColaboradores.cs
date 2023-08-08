@@ -1,13 +1,5 @@
-﻿using ADMBifa.Models;
-using ADMBifa.Repositories;
+﻿using ADMBifa.Repositories;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ADMBifa.View
@@ -15,6 +7,8 @@ namespace ADMBifa.View
     public partial class ListagemColaboradores : Form
     {
         ColaboradorRepository _repository = new ColaboradorRepository();
+
+        public int CodigoColaborador { get; set; }
 
         public ListagemColaboradores()
         {
@@ -34,6 +28,24 @@ namespace ADMBifa.View
         private void txtBusca_TextChanged(object sender, EventArgs e)
         {
             ListarColaboradores(txtBusca.Text);
+        }
+
+        private void dgvColaboradores_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewRow row = dgvColaboradores.Rows[e.RowIndex];
+
+            CodigoColaborador = (int)row.Cells["CodigoColaborador"].Value;
+
+            Close();
+        }
+
+        private void dgvColaboradores_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = dgvColaboradores.Rows[e.RowIndex];
+
+            CodigoColaborador = (int)row.Cells["CodigoColaborador"].Value;
+
+            Close();
         }
     }
 }

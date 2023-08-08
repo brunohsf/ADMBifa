@@ -9,7 +9,7 @@ namespace ADMBifa.Repositories
     {
 
 
-        public Colaborador CarregarColaborador()
+        public Colaborador CarregarPrimeiroColaborador()
         {
             var sql = @"SELECT TOP (1) CodigoColaborador,
                  Nome,

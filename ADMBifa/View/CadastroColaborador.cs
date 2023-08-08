@@ -15,12 +15,18 @@ namespace ADMBifa.View
         public CadastroColaborador()
         {
             InitializeComponent();
-            Carregar();
-
+            Carregar(_repository.CarregarPrimeiroColaborador());
         }
 
         private void btnGravar_Click(object sender, EventArgs e)
         {
+            if (cmbNivel.SelectedIndex < 1)
+            {
+                MessageBox.Show("Informe qual o nível do colaborador!", "Atenção!");
+                cmbNivel.Focus();
+                return;
+            }
+
             if (txtCodigoColaborador.Text == "")
                 txtCodigoColaborador.Text = "0";
 
@@ -38,10 +44,8 @@ namespace ADMBifa.View
             Close();
         }
 
-        private void Carregar()
+        public void Carregar(Colaborador colaborador)
         {
-
-            var colaborador = _repository.CarregarColaborador();
 
             if (colaborador is null)
                 return;
@@ -84,7 +88,7 @@ namespace ADMBifa.View
             {
                 _repository.Delete(colaborador);
                 LimparCampos();
-                Carregar();
+                Carregar(_repository.CarregarPrimeiroColaborador());
             }
         }
 
@@ -92,6 +96,7 @@ namespace ADMBifa.View
         {
             var listagemColaboradores = new ListagemColaboradores();
             listagemColaboradores.ShowDialog();
+            Carregar(_repository.Get(listagemColaboradores.CodigoColaborador));
         }
     }
 }
