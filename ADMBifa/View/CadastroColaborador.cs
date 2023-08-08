@@ -98,5 +98,10 @@ namespace ADMBifa.View
             listagemColaboradores.ShowDialog();
             Carregar(_repository.Get(listagemColaboradores.CodigoColaborador));
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Carregar(_repository.Get(int.Parse(txtCodigoColaborador.Text)));
+        }
     }
 }
