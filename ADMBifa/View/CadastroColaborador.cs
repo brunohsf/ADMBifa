@@ -2,7 +2,6 @@
 using ADMBifa.Models;
 using ADMBifa.Repositories;
 using System;
-using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace ADMBifa.View
@@ -20,14 +19,14 @@ namespace ADMBifa.View
 
         private void btnGravar_Click(object sender, EventArgs e)
         {
-            if (cmbNivel.SelectedIndex < 1)
+            if ((ENivel)cmbNivel.SelectedIndex == ENivel.NaoInformado)
             {
                 MessageBox.Show("Informe qual o nível do colaborador!", "Atenção!");
                 cmbNivel.Focus();
                 return;
             }
 
-            if (txtCodigoColaborador.Text == "")
+            if (txtCodigoColaborador.Text == string.Empty)
                 txtCodigoColaborador.Text = "0";
 
             var colaborador = new Colaborador(int.Parse(txtCodigoColaborador.Text), txtNome.Text, txtDataContratacao.Value, (int)txtLimite.Value, (ENivel)cmbNivel.SelectedIndex, ckAtivo.Checked);
@@ -76,7 +75,7 @@ namespace ADMBifa.View
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (txtCodigoColaborador.Text == "")
+            if (txtCodigoColaborador.Text == string.Empty)
             {
                 MessageBox.Show("Informe um colaborador para mandá-lo de Clibas!", "Atenção!");
                 return;
@@ -101,7 +100,10 @@ namespace ADMBifa.View
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            Carregar(_repository.Get(int.Parse(txtCodigoColaborador.Text)));
+            if (txtCodigoColaborador.Text == string.Empty)
+                Carregar(_repository.CarregarPrimeiroColaborador());
+            else
+                Carregar(_repository.Get(int.Parse(txtCodigoColaborador.Text)));
         }
     }
 }
