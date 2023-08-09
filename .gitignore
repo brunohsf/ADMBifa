@@ -1,1 +1,6 @@
+.vs/
+.vscode/
+packages/
+bin/
+obj/
 .vscode/settings.json
