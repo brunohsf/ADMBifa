@@ -6,9 +6,9 @@ namespace ADMBifa.View
 {
     public partial class ListagemColaboradores : Form
     {
-        ColaboradorRepository _repository = new ColaboradorRepository();
+        readonly ColaboradorRepository _repository = new ColaboradorRepository();
 
-        public int CodigoColaborador { get; set; }
+        public int CodigoColaborador { get; private set; }
 
         public ListagemColaboradores()
         {
@@ -18,17 +18,13 @@ namespace ADMBifa.View
 
         public void ListarColaboradores(string busca)
         {
-
             var colaboradores = _repository.ListarColaboradores(busca);
 
             dgvColaboradores.DataSource = colaboradores;
-
         }
 
         private void txtBusca_TextChanged(object sender, EventArgs e)
-        {
-            ListarColaboradores(txtBusca.Text);
-        }
+            => ListarColaboradores(txtBusca.Text);
 
         private void dgvColaboradores_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {

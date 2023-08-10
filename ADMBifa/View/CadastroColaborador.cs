@@ -8,8 +8,7 @@ namespace ADMBifa.View
 {
     public partial class CadastroColaborador : Form
     {
-
-        ColaboradorRepository _repository = new ColaboradorRepository();
+        readonly ColaboradorRepository _repository = new ColaboradorRepository();
 
         public CadastroColaborador()
         {
@@ -26,11 +25,10 @@ namespace ADMBifa.View
                 return;
             }
 
-            if (txtCodigoColaborador.Text == string.Empty)
+            if (string.IsNullOrEmpty(txtCodigoColaborador.Text))
                 txtCodigoColaborador.Text = "0";
 
             var colaborador = new Colaborador(int.Parse(txtCodigoColaborador.Text), txtNome.Text, txtDataContratacao.Value, (int)txtLimite.Value, (ENivel)cmbNivel.SelectedIndex, ckAtivo.Checked);
-
 
             if (colaborador.CodigoColaborador == 0)
                 _repository.Create(colaborador);
@@ -39,15 +37,11 @@ namespace ADMBifa.View
         }
 
         private void btnSair_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+            => Close();
 
         public void Carregar(Colaborador colaborador)
         {
-
-            if (colaborador is null)
-                return;
+            if (colaborador is null) return;
 
             txtCodigoColaborador.Text = colaborador.CodigoColaborador.ToString();
             txtNome.Text = colaborador.Nome;
@@ -55,13 +49,12 @@ namespace ADMBifa.View
             cmbNivel.SelectedIndex = (int)colaborador.CodigoNivel;
             txtLimite.Value = colaborador.LimiteBifas;
             ckAtivo.Checked = colaborador.Ativo;
-
         }
 
         private void LimparCampos()
         {
-            txtCodigoColaborador.Text = "";
-            txtNome.Text = "";
+            txtCodigoColaborador.Text = string.Empty;
+            txtNome.Text = string.Empty;
             txtDataContratacao.Value = DateTime.Now;
             cmbNivel.SelectedIndex = 0;
             txtLimite.Value = 0;
@@ -69,13 +62,11 @@ namespace ADMBifa.View
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
-        {
-            LimparCampos();
-        }
+            => LimparCampos();
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (txtCodigoColaborador.Text == string.Empty)
+            if (string.IsNullOrEmpty(txtCodigoColaborador.Text))
             {
                 MessageBox.Show("Informe um colaborador para mandá-lo de Clibas!", "Atenção!");
                 return;
@@ -100,7 +91,7 @@ namespace ADMBifa.View
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            if (txtCodigoColaborador.Text == string.Empty)
+            if (string.IsNullOrEmpty(txtCodigoColaborador.Text))
                 Carregar(_repository.CarregarPrimeiroColaborador());
             else
                 Carregar(_repository.Get(int.Parse(txtCodigoColaborador.Text)));

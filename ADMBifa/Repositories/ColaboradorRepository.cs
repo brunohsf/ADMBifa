@@ -7,8 +7,6 @@ namespace ADMBifa.Repositories
 {
     public class ColaboradorRepository : Repository<Colaborador>
     {
-
-
         public Colaborador CarregarPrimeiroColaborador()
         {
             var sql = @"SELECT TOP (1) CodigoColaborador,
@@ -42,12 +40,6 @@ namespace ADMBifa.Repositories
                 Ativo = 1,
                 Busca = $"{busca}%"
             });
-
         }
-
     }
-
 }
-
-
-

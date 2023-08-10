@@ -7,9 +7,7 @@ namespace ADMBifa
     public partial class FormPrincipal : Form
     {
         public FormPrincipal()
-        {
-            InitializeComponent();
-        }
+            => InitializeComponent();
 
         private void btnCadastarColaborador_Click(object sender, EventArgs e)
         {

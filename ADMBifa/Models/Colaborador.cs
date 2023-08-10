@@ -17,10 +17,7 @@ namespace ADMBifa.Models
             Ativo = ativo;
         }
 
-        public Colaborador()
-        {
-
-        }
+        public Colaborador() { }
 
         [Key]
         public int CodigoColaborador { get; set; }
@@ -29,6 +26,5 @@ namespace ADMBifa.Models
         public int LimiteBifas { get; set; }
         public ENivel CodigoNivel { get; set; }
         public bool Ativo { get; set; }
-
     }
 }
